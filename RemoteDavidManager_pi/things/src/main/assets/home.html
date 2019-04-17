@@ -1,0 +1,33 @@
+<html>
+  <head>
+      <title>Servo controller</title>
+
+      <script>
+          function setValue(val) {
+            var f1 = document.getElementById("controller");
+            var act = document.getElementById("action");
+            act.value = val;
+            f1.submit();
+          }
+
+      </script>
+  </head>
+  <body>
+    <center><h2>Servo controller</h2></center>
+    <form id="controller">
+        <input type="hidden" name="action" id="action">
+        <table>
+            <tr><strong>*To turn off the server</strong><br/>
+                1) Press 'turn on'<br/>
+                2) Press 'reset'<br/>
+                3) To turn off the server by force press 'turn off'<br/>
+            </tr>
+            <tr>
+                <td><input type="submit" value="turn on" onclick="setValue(1)"></td>
+                <td><input type="submit" value="reset" onclick="setValue(2)"></td>
+                <td><input type="submit" value="turn off" onclick="setValue(0)"></td>
+            </tr>
+        </table>
+    </form>
+  </body>
+</html>
